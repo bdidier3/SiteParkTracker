@@ -129,6 +129,41 @@
     });
   });
 
+  /* ---------- Scroll-spy : surligne la section visible dans la nav ---------- */
+  var spySections = document.querySelectorAll("main section[id]");
+  var navAnchors = document.querySelectorAll(".nav-links a[href*='#']");
+  if (
+    "IntersectionObserver" in window &&
+    spySections.length &&
+    navAnchors.length
+  ) {
+    // Associe chaque id de section à son lien de nav (href du type "/#features")
+    var linkById = {};
+    navAnchors.forEach(function (a) {
+      var hash = a.getAttribute("href").split("#")[1];
+      if (hash) linkById[hash] = a;
+    });
+
+    var spy = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (e) {
+          var link = linkById[e.target.id];
+          if (!link) return;
+          if (e.isIntersecting) {
+            navAnchors.forEach(function (a) {
+              a.classList.remove("active");
+            });
+            link.classList.add("active");
+          }
+        });
+      },
+      { rootMargin: "-45% 0px -50% 0px", threshold: 0 }
+    );
+    spySections.forEach(function (s) {
+      if (linkById[s.id]) spy.observe(s);
+    });
+  }
+
   /* ---------- Année dynamique dans le footer ---------- */
   document.querySelectorAll("[data-year]").forEach(function (el) {
     el.textContent = new Date().getFullYear();

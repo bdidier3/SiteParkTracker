@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Page introuvable — ParkTracker</title>
+  <meta name="robots" content="noindex" />
+  <meta name="theme-color" content="#0F1115" />
+  <link rel="icon" type="image/png" href="/assets/logo-dark-bg.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/style.css" />
+  <style>
+    .err-wrap {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 40px 24px;
+    }
+    .err-code {
+      font-size: clamp(5rem, 18vw, 11rem);
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      line-height: 1;
+      background: linear-gradient(120deg, var(--accent), #ff8a6b);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 8px;
+    }
+    .err-wrap h1 {
+      font-size: clamp(1.4rem, 4vw, 2.1rem);
+      margin-bottom: 14px;
+    }
+    .err-wrap p {
+      color: var(--text-muted);
+      max-width: 460px;
+      margin: 0 auto 30px;
+    }
+    .err-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      justify-content: center;
+    }
+    .err-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+      font-size: 1.1rem;
+      margin-bottom: 34px;
+    }
+    .err-brand img { width: 32px; height: 32px; }
+  </style>
+</head>
+<body>
+  <div class="err-wrap">
+    <a href="/" class="err-brand" aria-label="ParkTracker — accueil">
+      <img src="/assets/logo-mark.png" alt="" width="32" height="32" />
+      Park<span style="color:var(--accent)">Tracker</span>
+    </a>
+    <div class="err-code">404</div>
+    <h1>Cette page a quitté le parc</h1>
+    <p>L'adresse demandée n'existe pas ou a été déplacée. Pas de panique, revenons à l'entrée.</p>
+    <div class="err-actions">
+      <a href="/" class="btn btn-primary">Retour à l'accueil</a>
+      <a href="/assistance" class="btn btn-ghost">Assistance</a>
+    </div>
+  </div>
+</body>
+</html>
