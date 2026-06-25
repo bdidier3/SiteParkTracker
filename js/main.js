@@ -129,6 +129,52 @@
     });
   });
 
+  /* ---------- Navigation par sections SANS # visible dans l'URL ---------- */
+  function cleanUrl() {
+    // Retire tout hash de la barre d'adresse, garde le chemin propre
+    history.replaceState(null, "", location.pathname + location.search);
+  }
+
+  function scrollToId(id, smooth) {
+    var el = document.getElementById(id);
+    if (!el) return false;
+    el.scrollIntoView({ behavior: smooth ? "smooth" : "auto" });
+    return true;
+  }
+
+  // Au chargement : si on arrive avec un #ancre (ex. depuis une autre page),
+  // on défile vers la section puis on nettoie l'URL.
+  if (location.hash.length > 1) {
+    var initialId = decodeURIComponent(location.hash.slice(1));
+    window.requestAnimationFrame(function () {
+      window.setTimeout(function () {
+        if (scrollToId(initialId, false)) cleanUrl();
+      }, 60);
+    });
+  }
+
+  // Clic sur un lien d'ancre interne (href "#xxx" ou "/#xxx")
+  document.querySelectorAll('a[href*="#"]').forEach(function (a) {
+    var match = (a.getAttribute("href") || "").match(/^\/?#(.+)$/);
+    if (!match) return;
+    var id = match[1];
+    a.addEventListener("click", function (e) {
+      // Si la section est sur la page courante : défilement fluide + URL propre
+      if (document.getElementById(id)) {
+        e.preventDefault();
+        scrollToId(id, true);
+        cleanUrl();
+        // Ferme le menu mobile si ouvert
+        if (links && links.classList.contains("open")) {
+          links.classList.remove("open");
+          if (toggle) toggle.classList.remove("open");
+        }
+      }
+      // Sinon (section sur l'accueil depuis une autre page) : navigation
+      // normale vers "/#id", nettoyée au chargement par le bloc ci-dessus.
+    });
+  });
+
   /* ---------- Scroll-spy : surligne la section visible dans la nav ---------- */
   var spySections = document.querySelectorAll("main section[id]");
   var navAnchors = document.querySelectorAll(".nav-links a[href*='#']");

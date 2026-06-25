@@ -997,6 +997,11 @@ h3 {
 /* ===========================================================
    Animations au scroll
    =========================================================== */
+/* Décalage d'ancrage : le scroll s'arrête sous le header fixe */
+section[id] {
+  scroll-margin-top: 84px;
+}
+
 .reveal {
   opacity: 0;
   transform: translateY(28px);
