@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ParkTracker — Chaque visite de parc devient une aventure mesurable</title>
+  <meta name="description" content="ParkTracker enregistre automatiquement vos attractions, pas, distance, calories et forces G. XP, missions, classement entre amis, badges et récap annuel Wrapped." />
+  <meta name="theme-color" content="#0F1115" />
+  <link rel="icon" type="image/png" href="assets/logo-dark-bg.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="ParkTracker" />
+  <meta property="og:description" content="Transformez chaque visite de parc d'attractions en aventure mesurable." />
+  <meta property="og:type" content="website" />
+</head>
+<body>
+
+  <!-- ===================== HEADER ===================== -->
+  <header class="site-header">
+    <div class="container nav">
+      <a href="index.html" class="brand" aria-label="ParkTracker — accueil">
+        <span class="logo">
+          <img src="assets/logo-mark.png" alt="" width="34" height="34" />
+        </span>
+        Park<span class="accent">Tracker</span>
+      </a>
+
+      <nav>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html#features">Fonctionnalités</a></li>
+          <li><a href="index.html#premium">Premium</a></li>
+          <li><a href="index.html#parks">Parcs</a></li>
+          <li><a href="assistance.html">Assistance</a></li>
+          <li>
+            <a href="#download" class="btn btn-primary nav-cta">Télécharger</a>
+          </li>
+        </ul>
+      </nav>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false" aria-controls="navLinks">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===================== HERO ===================== -->
+    <section class="hero" id="download">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <h1 class="reveal">
+            Chaque visite de parc devient une
+            <span class="grad">aventure mesurable</span>.
+          </h1>
+          <p class="lead reveal" data-delay="2">
+            ParkTracker enregistre automatiquement les attractions que vous faites,
+            vos pas, votre distance, vos calories et les forces&nbsp;G subies.
+            Gagnez de l'XP, relevez des missions et défiez vos amis.
+          </p>
+          <div class="hero-actions reveal" data-delay="3">
+            <span class="btn btn-store btn-disabled" aria-disabled="true" role="button" aria-label="Bientôt disponible sur l'App Store">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M16.5 1.5c.1 1-.3 2-1 2.8-.7.8-1.8 1.4-2.8 1.3-.1-1 .4-2 1-2.7.7-.8 1.9-1.4 2.8-1.4zM20 17.2c-.5 1.2-.8 1.7-1.4 2.7-.9 1.4-2.1 3.1-3.7 3.1-1.4 0-1.7-.9-3.6-.9-1.8 0-2.2.9-3.6.9-1.5 0-2.7-1.5-3.6-2.9C1.2 17.4.9 13 2.5 10.7c1-1.5 2.6-2.4 4.1-2.4 1.5 0 2.5 1 3.7 1 1.2 0 1.9-1 3.7-1 1.3 0 2.7.7 3.7 2-3.3 1.8-2.7 6.4.3 6.9z"/>
+              </svg>
+              <span class="store-text">
+                <small>Bientôt sur l'</small>
+                <strong>App Store</strong>
+              </span>
+            </span>
+            <a href="#features" class="btn btn-ghost">Découvrir les fonctions</a>
+          </div>
+
+          <div class="hero-stats reveal" data-delay="4">
+            <div class="stat"><strong>+50</strong><span>parcs reconnus</span></div>
+            <div class="stat"><strong>Auto</strong><span>détection GPS</span></div>
+            <div class="stat"><strong>Wrapped</strong><span>récap annuel</span></div>
+          </div>
+        </div>
+
+        <div class="hero-visual reveal" data-delay="2">
+          <div class="phone" data-parallax>
+            <div class="phone-screen has-img">
+              <img src="assets/accueil_image.png" alt="Écran d'accueil de l'application ParkTracker" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== FONCTIONNALITÉS ===================== -->
+    <section class="section" id="features">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow reveal">Fonctionnalités</span>
+          <h2 class="section-title reveal" data-delay="1">Tout ce que vit votre journée, capté</h2>
+          <p class="section-subtitle reveal" data-delay="2">
+            ParkTracker tourne en arrière-plan et transforme vos sensations en données,
+            en jeu et en souvenirs.
+          </p>
+        </div>
+
+        <div class="features-grid">
+          <!-- Carte 1 -->
+          <article class="feature-card reveal">
+            <div class="feature-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l3 8 4-16 3 8h4"/></svg>
+            </div>
+            <h3>Suivi auto des attractions</h3>
+            <p>Grâce au GPS, l'app détecte votre entrée dans le parc et enregistre chaque attraction sans rien toucher.</p>
+          </article>
+
+          <!-- Carte 2 -->
+          <article class="feature-card reveal" data-delay="1">
+            <div class="feature-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8z"/></svg>
+            </div>
+            <h3>Pas, distance &amp; forces G</h3>
+            <p>Les capteurs mesurent vos pas, la distance parcourue, les calories et les forces G subies dans les loopings.</p>
+          </article>
+
+          <!-- Carte 3 -->
+          <article class="feature-card reveal" data-delay="2">
+            <div class="feature-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.5 6.5L21 9l-5 4 1.5 7L12 16l-5.5 4L8 13 3 9l6.5-.5z"/></svg>
+            </div>
+            <h3>XP, niveaux &amp; missions</h3>
+            <p>Montez de niveau et relevez des missions quotidiennes, hebdomadaires, mensuelles et annuelles.</p>
+          </article>
+
+          <!-- Carte 4 -->
+          <article class="feature-card reveal" data-delay="1">
+            <div class="feature-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <h3>Classement entre amis</h3>
+            <p>Ajoutez vos amis, comparez vos scores et grimpez dans le classement à chaque visite.</p>
+          </article>
+
+          <!-- Carte 5 -->
+          <article class="feature-card reveal" data-delay="2">
+            <div class="feature-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 17.3 6.2 20l1.1-6.5L2.5 8.9l6.5-.9L12 2l3 6 6.5.9-4.8 4.6 1.1 6.5z"/></svg>
+            </div>
+            <h3>Avis &amp; photos</h3>
+            <p>Notez les attractions, partagez vos photos et retrouvez les avis de la communauté.</p>
+          </article>
+
+          <!-- Carte 6 -->
+          <article class="feature-card reveal" data-delay="3">
+            <div class="feature-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M3 9h18M9 21V9"/></svg>
+            </div>
+            <h3>Wrapped annuel</h3>
+            <p>En fin d'année, un récap façon « Wrapped » : vos chiffres, vos records et vos meilleurs moments.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== PREMIUM ===================== -->
+    <section class="section premium" id="premium">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow reveal">Premium</span>
+          <h2 class="section-title reveal" data-delay="1">Passez au niveau supérieur</h2>
+          <p class="section-subtitle reveal" data-delay="2">
+            Gardez ParkTracker gratuit, ou débloquez les prédictions et alertes
+            qui changent vos journées.
+          </p>
+        </div>
+
+        <div class="premium-grid">
+          <!-- Gratuit -->
+          <div class="plan basic reveal">
+            <span class="plan-tag">Gratuit</span>
+            <h3>ParkTracker</h3>
+            <div class="price">0 €<span> / pour toujours</span></div>
+            <p class="price-alt">Toutes les bases de l'aventure.</p>
+            <ul>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Suivi auto des attractions</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Pas, distance, calories &amp; forces G</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> XP, missions &amp; badges</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Classement entre amis</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Avis, photos &amp; Wrapped annuel</li>
+            </ul>
+            <a href="#download" class="btn btn-ghost">Commencer gratuitement</a>
+          </div>
+
+          <!-- Premium -->
+          <div class="plan featured reveal" data-delay="1">
+            <span class="plan-tag">Premium · le plus populaire</span>
+            <h3>ParkTracker Premium</h3>
+            <div class="price">4,99 €<span> / mois</span></div>
+            <p class="price-alt">ou 49,99 € / an — économisez ~17 %</p>
+            <ul>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> <strong>Prédictions d'affluence</strong> des parcs</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> <strong>Alertes files basses</strong> en temps réel</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Suivi <strong>Virtual Queue</strong></li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> <strong>Boost d'XP</strong></li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Bannière de profil exclusive</li>
+            </ul>
+            <a href="#download" class="btn btn-primary">Essayer Premium</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== PARCS ===================== -->
+    <section class="section" id="parks">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow reveal">Parcs supportés</span>
+          <h2 class="section-title reveal" data-delay="1">Reconnus automatiquement</h2>
+          <p class="section-subtitle reveal" data-delay="2">
+            Des grands parcs européens aux géants américains, ParkTracker vous suit.
+          </p>
+        </div>
+
+        <div class="parks-grid">
+          <div class="park-card reveal"><span class="pin"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span><span><strong>Disneyland Paris</strong><small>France</small></span></div>
+          <div class="park-card reveal" data-delay="1"><span class="pin"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span><span><strong>Europa-Park</strong><small>Allemagne</small></span></div>
+          <div class="park-card reveal" data-delay="2"><span class="pin"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span><span><strong>Parc Astérix</strong><small>France</small></span></div>
+          <div class="park-card reveal" data-delay="3"><span class="pin"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span><span><strong>PortAventura</strong><small>Espagne</small></span></div>
+          <div class="park-card reveal"><span class="pin"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span><span><strong>Efteling</strong><small>Pays-Bas</small></span></div>
+          <div class="park-card reveal" data-delay="1"><span class="pin"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span><span><strong>Walt Disney World</strong><small>Floride, USA</small></span></div>
+          <div class="park-card reveal" data-delay="2"><span class="pin"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span><span><strong>Universal Orlando</strong><small>Floride, USA</small></span></div>
+          <div class="park-card reveal" data-delay="3"><span class="pin"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span><span><strong>Cedar Point</strong><small>Ohio, USA</small></span></div>
+        </div>
+        <p class="parks-note reveal">…et bien d'autres ajoutés régulièrement.</p>
+      </div>
+    </section>
+
+    <!-- ===================== CTA ===================== -->
+    <section class="section" style="padding-top:0;">
+      <div class="container">
+        <div class="cta-band reveal">
+          <h2>Prêt à transformer votre prochaine visite&nbsp;?</h2>
+          <p>Téléchargez ParkTracker et commencez à mesurer chaque sensation dès aujourd'hui.</p>
+          <span class="btn btn-store btn-disabled" style="margin:0 auto;" aria-disabled="true" role="button" aria-label="Bientôt disponible sur l'App Store">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.5 1.5c.1 1-.3 2-1 2.8-.7.8-1.8 1.4-2.8 1.3-.1-1 .4-2 1-2.7.7-.8 1.9-1.4 2.8-1.4zM20 17.2c-.5 1.2-.8 1.7-1.4 2.7-.9 1.4-2.1 3.1-3.7 3.1-1.4 0-1.7-.9-3.6-.9-1.8 0-2.2.9-3.6.9-1.5 0-2.7-1.5-3.6-2.9C1.2 17.4.9 13 2.5 10.7c1-1.5 2.6-2.4 4.1-2.4 1.5 0 2.5 1 3.7 1 1.2 0 1.9-1 3.7-1 1.3 0 2.7.7 3.7 2-3.3 1.8-2.7 6.4.3 6.9z"/></svg>
+            <span class="store-text"><small>Bientôt sur l'</small><strong>App Store</strong></span>
+          </span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="brand">
+            <span class="logo"><img src="assets/logo-mark.png" alt="" width="34" height="34" /></span>
+            Park<span class="accent">Tracker</span>
+          </a>
+          <p>Transformez chaque visite de parc d'attractions en aventure mesurable.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Produit</h4>
+          <ul>
+            <li><a href="index.html#features">Fonctionnalités</a></li>
+            <li><a href="index.html#premium">Premium</a></li>
+            <li><a href="index.html#parks">Parcs supportés</a></li>
+            <li><a href="assistance.html">Assistance</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Légal &amp; contact</h4>
+          <ul>
+            <li><a href="confidentialite.html">Confidentialité</a></li>
+            <li><a href="cgu.html">Conditions d'utilisation</a></li>
+            <li><a href="mailto:contact@parktracker.fr">contact@parktracker.fr</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <small>© <span data-year>2026</span> Baptiste DIDIER. Tous droits réservés.</small>
+        <small><a href="confidentialite.html">Confidentialité</a> · <a href="cgu.html">CGU</a></small>
+      </div>
+
+      <p class="disclaimer">
+        ParkTracker est une application indépendante, non affiliée et non approuvée
+        par les parcs cités. Les noms et marques appartiennent à leurs propriétaires
+        respectifs.
+      </p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
