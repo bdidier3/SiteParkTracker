@@ -162,25 +162,30 @@ h3 {
 }
 
 .brand {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: 10px;
   font-weight: 800;
   font-size: 1.15rem;
   letter-spacing: -0.02em;
+  line-height: 1;
 }
 
 .brand .logo {
   width: 34px;
   height: 34px;
-  display: grid;
-  place-items: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   flex-shrink: 0;
 }
 
-.brand .logo svg {
+.brand .logo svg,
+.brand .logo img {
   width: 100%;
   height: 100%;
+  object-fit: contain;
+  display: block;
 }
 
 .brand .accent {
