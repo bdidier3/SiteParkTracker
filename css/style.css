@@ -210,6 +210,13 @@ h3 {
   color: var(--accent);
 }
 
+/* Le bouton CTA garde toujours son texte blanc (jamais orange sur orange) */
+.nav-links a.btn-primary,
+.nav-links a.btn-primary:hover,
+.nav-links a.btn-primary.active {
+  color: #fff;
+}
+
 /* Marque dans la barre de nav : tout en blanc */
 .site-header .brand,
 .site-header .brand .accent {
