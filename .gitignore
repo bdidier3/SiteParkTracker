@@ -1,0 +1,7 @@
+# Vidéo source non compressée (gardée en local uniquement)
+assets/hero-original.mp4
+
+# Divers
+node_modules/
+.DS_Store
+Thumbs.db
