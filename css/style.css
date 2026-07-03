@@ -1305,7 +1305,7 @@ section[id] {
     gap: 50px;
   }
   .hero-visual {
-    order: -1;
+    order: 0;
   }
   .device-stack {
     height: 560px;
@@ -1336,14 +1336,21 @@ section[id] {
     padding: 24px;
     gap: 22px;
     transform: translateY(-120%);
-    transition: transform 0.4s var(--ease);
+    visibility: hidden;
+    transition: transform 0.4s var(--ease), visibility 0s linear 0.4s;
     align-items: flex-start;
   }
   .nav-links.open {
     transform: translateY(0);
+    visibility: visible;
+    transition: transform 0.4s var(--ease), visibility 0s;
   }
   .nav-toggle {
     display: flex;
+  }
+  /* Sur téléphone : on masque la maquette du téléphone */
+  .hero-visual {
+    display: none;
   }
   .site-header .brand {
     font-size: 1.34rem;
