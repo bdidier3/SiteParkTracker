@@ -277,6 +277,33 @@ h3 {
   color: #fff;
 }
 
+/* Icône réseau social dans la barre de nav */
+.nav-social {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 11px;
+  color: var(--text);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  margin-left: 10px;
+  flex-shrink: 0;
+  transition: color 0.25s var(--ease), background 0.25s var(--ease),
+    border-color 0.25s var(--ease), transform 0.25s var(--ease);
+}
+.nav-social:hover {
+  color: #fff;
+  background: var(--accent);
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+.nav-social svg {
+  width: 21px;
+  height: 21px;
+}
+
 .nav-toggle {
   display: none;
   flex-direction: column;
@@ -1029,6 +1056,35 @@ h3 {
   margin-top: 14px;
   max-width: 320px;
 }
+
+/* Réseaux sociaux dans le footer */
+.footer-social {
+  display: flex;
+  gap: 10px;
+  margin-top: 18px;
+}
+.footer-social a {
+  width: 42px;
+  height: 42px;
+  border-radius: 11px;
+  display: grid;
+  place-items: center;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  transition: color 0.25s var(--ease), border-color 0.25s var(--ease),
+    background 0.25s var(--ease), transform 0.25s var(--ease);
+}
+.footer-social a:hover {
+  color: #fff;
+  background: var(--accent);
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+.footer-social svg {
+  width: 21px;
+  height: 21px;
+}
 .footer-col h4 {
   font-size: 0.85rem;
   text-transform: uppercase;
@@ -1350,6 +1406,10 @@ section[id] {
   }
   /* Sur téléphone : on masque la maquette du téléphone */
   .hero-visual {
+    display: none;
+  }
+  /* Icône TikTok masquée dans la nav sur mobile (elle reste dans le footer) */
+  .nav-social {
     display: none;
   }
   .site-header .brand {
