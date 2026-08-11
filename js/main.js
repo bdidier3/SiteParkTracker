@@ -5,6 +5,35 @@
 (function () {
   "use strict";
 
+  /* ---------- Téléchargement intelligent selon l'OS ---------- */
+  var STORE_IOS =
+    "https://apps.apple.com/fr/app/parktracker/id6783854201";
+  var STORE_ANDROID =
+    "https://play.google.com/store/apps/details?id=com.parktracker.app&hl=fr";
+
+  function detectOS() {
+    var ua = navigator.userAgent || navigator.vendor || "";
+    if (/android/i.test(ua)) return "android";
+    if (
+      /iphone|ipad|ipod/i.test(ua) ||
+      (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1)
+    )
+      return "ios";
+    return "other";
+  }
+
+  var os = detectOS();
+  if (os === "android" || os === "ios") {
+    var storeUrl = os === "android" ? STORE_ANDROID : STORE_IOS;
+    // Le bouton « Télécharger » de la nav pointe direct vers le bon store
+    document.querySelectorAll(".nav-cta").forEach(function (a) {
+      a.setAttribute("href", storeUrl);
+      a.setAttribute("target", "_blank");
+      a.setAttribute("rel", "noopener");
+    });
+  }
+  // Sur ordinateur : le bouton garde son comportement (défilement vers les badges).
+
   /* ---------- Header qui se fond au scroll ---------- */
   var header = document.querySelector(".site-header");
   function onScrollHeader() {
