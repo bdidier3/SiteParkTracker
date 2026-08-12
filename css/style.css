@@ -497,6 +497,78 @@ h3 {
   overflow: hidden;
 }
 
+/* ---------- Bloc parrainage (?ref=CODE) ---------- */
+.ref-banner {
+  position: relative;
+  z-index: 2;
+  max-width: 560px;
+  margin: 0 auto 46px;
+  background: linear-gradient(180deg, rgba(255, 90, 54, 0.16), var(--surface) 62%);
+  border: 1px solid rgba(255, 90, 54, 0.5);
+  border-radius: var(--radius-lg);
+  padding: 28px 26px;
+  text-align: center;
+  box-shadow: 0 26px 64px -30px var(--accent-glow);
+}
+.ref-eyebrow {
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 0.92rem;
+  margin-bottom: 16px;
+}
+.ref-label {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+}
+.ref-code-row {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+.ref-code {
+  font-size: clamp(1.9rem, 9vw, 2.7rem);
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  padding: 8px 16px 8px 22px;
+  border-radius: 14px;
+  background: rgba(0, 0, 0, 0.28);
+  border: 1px solid var(--border);
+  font-variant-numeric: tabular-nums;
+  user-select: all;
+}
+.ref-copy {
+  padding: 12px 22px;
+}
+.ref-copy.is-copied {
+  background: #22c55e;
+  box-shadow: none;
+}
+.ref-hint {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-bottom: 22px;
+}
+.ref-install {
+  margin: 0 auto;
+}
+.ref-stores {
+  display: none;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+/* Ordinateur : on masque le gros bouton et on montre les 2 badges */
+.ref-banner.ref-desktop .ref-install {
+  display: none;
+}
+.ref-banner.ref-desktop .ref-stores {
+  display: flex;
+}
+
 /* Vidéo de fond du hero */
 .hero-media {
   position: absolute;

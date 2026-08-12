@@ -34,6 +34,79 @@
   }
   // Sur ordinateur : le bouton garde son comportement (défilement vers les badges).
 
+  /* ---------- Parrainage : ?ref=CODE ---------- */
+  (function () {
+    var banner = document.getElementById("refBanner");
+    if (!banner) return; // uniquement sur l'accueil
+
+    var ref = new URLSearchParams(location.search).get("ref");
+    var valid = ref && /^[0-9A-Fa-f]{6}$/.test(ref);
+    if (!valid) return; // pas de code valide -> page normale, on ne montre rien
+
+    var code = ref.toUpperCase();
+    try {
+      localStorage.setItem("pt_ref", code);
+    } catch (e) {}
+
+    document.getElementById("refCode").textContent = code;
+
+    var APPLE = "https://apps.apple.com/app/id6783854201";
+    var PLAY =
+      "https://play.google.com/store/apps/details?id=com.parktracker.app&referrer=" +
+      encodeURIComponent("ref=" + code);
+
+    var uaRef = navigator.userAgent || "";
+    var isIOS =
+      /iPad|iPhone|iPod/.test(uaRef) ||
+      (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+    var isAndroid = /Android/.test(uaRef);
+
+    var androidLink = banner.querySelector(".ref-store-android");
+    if (androidLink) androidLink.setAttribute("href", PLAY);
+
+    var install = document.getElementById("refInstall");
+    if (isAndroid) install.setAttribute("href", PLAY);
+    else if (isIOS) install.setAttribute("href", APPLE);
+    else banner.classList.add("ref-desktop"); // ordinateur : 2 badges, pas de redirection
+
+    banner.hidden = false; // on affiche le bloc (jamais de redirection automatique)
+
+    // Bouton « Copier »
+    var copyBtn = document.getElementById("refCopy");
+    var COPIED = { fr: "Copié ✓", en: "Copied ✓", es: "Copiado ✓" };
+    copyBtn.addEventListener("click", function () {
+      var prev = copyBtn.textContent;
+      function confirmCopied() {
+        var lang = document.documentElement.lang || "fr";
+        copyBtn.textContent = COPIED[lang] || COPIED.fr;
+        copyBtn.classList.add("is-copied");
+        window.setTimeout(function () {
+          copyBtn.textContent = prev;
+          copyBtn.classList.remove("is-copied");
+        }, 2000);
+      }
+      function fallbackCopy() {
+        var ta = document.createElement("textarea");
+        ta.value = code;
+        ta.setAttribute("readonly", "");
+        ta.style.position = "absolute";
+        ta.style.left = "-9999px";
+        document.body.appendChild(ta);
+        ta.select();
+        try {
+          document.execCommand("copy");
+        } catch (e) {}
+        document.body.removeChild(ta);
+        confirmCopied();
+      }
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(code).then(confirmCopied, fallbackCopy);
+      } else {
+        fallbackCopy();
+      }
+    });
+  })();
+
   /* ---------- Header qui se fond au scroll ---------- */
   var header = document.querySelector(".site-header");
   function onScrollHeader() {
