@@ -1261,6 +1261,152 @@ h3 {
   margin-bottom: 30px;
 }
 
+/* ---------- Nouveautés : frise chronologique verticale ---------- */
+.timeline {
+  position: relative;
+  padding-left: 42px;
+}
+/* Le fil vertical, vif en haut puis qui s'estompe vers le passé */
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 11px;
+  top: 18px;
+  bottom: 4px;
+  width: 2px;
+  border-radius: 2px;
+  background: linear-gradient(
+    180deg,
+    var(--accent) 0%,
+    rgba(255, 90, 54, 0.5) 10%,
+    #333844 30%,
+    #333844 84%,
+    rgba(51, 56, 68, 0) 100%
+  );
+}
+
+.release {
+  position: relative;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px 26px;
+  margin-bottom: 26px;
+  transition: transform 0.4s var(--ease), border-color 0.4s var(--ease),
+    box-shadow 0.4s var(--ease);
+}
+.release:last-child {
+  margin-bottom: 0;
+}
+.release:hover {
+  transform: translateY(-3px);
+  border-color: #3a3f4b;
+  box-shadow: var(--shadow);
+}
+
+/* Pastille posée sur le fil */
+.release::before {
+  content: "";
+  position: absolute;
+  left: -36px;
+  top: 27px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--surface-2);
+  border: 2px solid var(--border);
+  box-shadow: 0 0 0 5px var(--bg);
+  z-index: 1;
+}
+/* Petit trait qui relie la pastille à la carte */
+.release::after {
+  content: "";
+  position: absolute;
+  left: -24px;
+  top: 32px;
+  width: 24px;
+  height: 2px;
+  background: var(--border);
+}
+
+/* Version la plus récente : accentuée */
+.release.is-latest {
+  border-color: rgba(255, 90, 54, 0.45);
+  background: linear-gradient(180deg, rgba(255, 90, 54, 0.09), var(--surface) 60%);
+  box-shadow: 0 24px 60px -34px var(--accent-glow);
+}
+.release.is-latest::before {
+  background: var(--accent);
+  border-color: var(--accent);
+  box-shadow: 0 0 0 5px var(--bg), 0 0 18px 2px var(--accent-glow);
+  animation: releasePulse 2.6s ease-in-out infinite;
+}
+.release.is-latest::after {
+  background: rgba(255, 90, 54, 0.45);
+}
+@keyframes releasePulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 5px var(--bg), 0 0 18px 2px var(--accent-glow);
+  }
+  50% {
+    box-shadow: 0 0 0 5px var(--bg), 0 0 26px 6px var(--accent-glow);
+  }
+}
+
+.release-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 18px;
+}
+.release-version {
+  font-size: 1.42rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  font-variant-numeric: tabular-nums;
+}
+.release.is-latest .release-version {
+  color: var(--accent);
+}
+.release-badge {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: var(--accent-soft);
+  border: 1px solid rgba(255, 90, 54, 0.3);
+  border-radius: 999px;
+  padding: 5px 12px;
+}
+.release-list {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+}
+.release-list li {
+  position: relative;
+  padding-left: 22px;
+  color: var(--text-muted);
+  font-size: 0.97rem;
+  line-height: 1.55;
+}
+.release-list li::before {
+  content: "";
+  position: absolute;
+  left: 3px;
+  top: 0.6em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--text-dim);
+}
+.release.is-latest .release-list li::before {
+  background: var(--accent);
+}
+
 .callout {
   background: var(--surface);
   border: 1px solid var(--border);
@@ -1427,6 +1573,26 @@ section[id] {
 /* ===========================================================
    Responsive
    =========================================================== */
+/* Ecrans intermediaires : on resserre la nav pour que tous les liens tiennent */
+@media (max-width: 1120px) {
+  .nav-links {
+    gap: 20px;
+  }
+  .nav-links a {
+    font-size: 0.9rem;
+  }
+  .site-header .brand {
+    font-size: 1.42rem;
+  }
+  .site-header .brand .logo {
+    width: 42px;
+    height: 42px;
+  }
+  .nav-social {
+    display: none;
+  }
+}
+
 @media (max-width: 980px) {
   .hero-grid {
     grid-template-columns: 1fr;
@@ -1449,10 +1615,8 @@ section[id] {
   }
 }
 
-@media (max-width: 720px) {
-  .section {
-    padding: 80px 0;
-  }
+/* Sous 940px : la nav ne tient plus sur une ligne, on passe au menu deroulant */
+@media (max-width: 940px) {
   .nav-links {
     position: fixed;
     inset: 94px 0 auto 0;
@@ -1473,8 +1637,35 @@ section[id] {
     visibility: visible;
     transition: transform 0.4s var(--ease), visibility 0s;
   }
+  .nav-links a {
+    font-size: 1rem;
+  }
   .nav-toggle {
     display: flex;
+  }
+}
+
+@media (max-width: 720px) {
+  .section {
+    padding: 80px 0;
+  }
+  /* Frise resserrée sur téléphone */
+  .timeline {
+    padding-left: 28px;
+  }
+  .timeline::before {
+    left: 7px;
+  }
+  .release {
+    padding: 20px 20px;
+    margin-bottom: 20px;
+  }
+  .release::before {
+    left: -26px;
+  }
+  .release::after {
+    left: -14px;
+    width: 14px;
   }
   /* Sur téléphone : on masque la maquette du téléphone */
   .hero-visual {
